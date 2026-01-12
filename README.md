@@ -1,6 +1,7 @@
 # SecureCore – MVC Multi-Role Authentication System
 
-This project is a custom-built authentication system developed in PHP using a homemade MVC architecture (without any framework). It supports multiple user roles with protected routes, secure session handling, and a scalable structure.
+This project is a custom-built authentication system developed in PHP using a homemade MVC architecture (without any framework).
+It follows a layered architecture using **Entities, Repositories, and Services** to ensure clean separation of concerns, scalability, and maintainability.
 
 ---
 
@@ -8,11 +9,36 @@ This project is a custom-built authentication system developed in PHP using a ho
 
 * Implement a clean MVC architecture
 * Build a centralized routing system
-* Separate business logic, controllers, and views
+* Apply a layered architecture (Entity, Repository, Service)
+* Separate business logic from controllers and views
 * Manage multi-role authentication
 * Protect routes based on authentication and role
 * Apply modern security practices
 * Demonstrate why OOP is more maintainable than procedural code
+
+---
+
+## Architecture Overview
+
+This project follows a strict layered MVC structure:
+
+```
+Request → index.php → Router → Controller → Service → Repository → Database
+                                             ↓
+                                            Entity
+                                             ↓
+                                            View
+```
+
+### Layer Responsibilities
+
+* **Entity**: Represents domain objects (User, Role, Candidate, Company)
+* **Repository**: Handles all database operations
+* **Service**: Contains business logic
+* **Controller**: Handles HTTP requests and responses
+* **View**: Displays data (no logic)
+* **Router**: Centralized route management
+* **Middleware**: Access control & security
 
 ---
 
@@ -28,6 +54,7 @@ Each role has:
 * Its own controllers
 * Its own protected views
 * Its own dashboard
+* Its own access rules
 
 ---
 
@@ -57,21 +84,14 @@ Each role has:
 
 ---
 
-## Architecture
+## Project Rules
 
-This project follows a strict MVC pattern:
-
-```
-Request → index.php → Router → Controller → Model → View
-```
-
-### Key Rules:
-
-* Single entry point
-* No business logic in views
-* No SQL in controllers
+* Single entry point (`public/index.php`)
 * No direct access to views
-* Centralized routing
+* No SQL in controllers
+* No business logic in views
+* No procedural code in controllers
+* All database access via repositories
 
 ---
 
@@ -80,7 +100,9 @@ Request → index.php → Router → Controller → Model → View
 ```
 /app
   /Controllers
-  /Models
+  /Entities
+  /Repositories
+  /Services
   /Views
   /Core
 /public
@@ -134,4 +156,4 @@ Both diagrams are provided in the `/documents` folder.
 
 ## Author
 
-Project developed as part of a learning assignment to demonstrate MVC architecture, OOP principles, and secure authentication systems.
+Project developed as part of a learning assignment to demonstrate MVC architecture, layered design, OOP principles, and secure authentication systems.
