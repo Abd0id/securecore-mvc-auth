@@ -98,16 +98,23 @@ Each role has:
 ## Project Structure
 
 ```
-/app
-  /Controllers
-  /Entities
-  /Repositories
-  /Services
-  /Views
-  /Core
-/public
-  index.php
-/config
+.
+├── app
+│   ├── Controllers
+│   ├── Core
+│   ├── Entities
+│   ├── Repositories
+│   ├── Services
+│   └── Views
+├── composer.json
+├── composer.phar
+├── config
+├── documents
+├── public
+│   └── index.php
+├── README.md
+└── src
+
 ```
 
 ---

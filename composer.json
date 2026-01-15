@@ -1,0 +1,15 @@
+{
+    "name": "abd0id/securecore-mvc-auth",
+    "autoload": {
+        "psr-4": {
+            "Abd0id\\SecurecoreMvcAuth\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Abd0id",
+            "email": "abdallahidfat@gmail.com"
+        }
+    ],
+    "require": {}
+}
