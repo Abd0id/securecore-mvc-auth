@@ -7,10 +7,12 @@
     <title>Register - SecureCore</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
 
 </head>
 
-<body>
+<body class="register-page">
     <ul class="circles">
         <li style="left: 25%; width: 80px; height: 80px; animation-delay: 0s;"></li>
         <li style="left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s;"></li>
@@ -89,52 +91,12 @@
             </button>
 
             <div class="login-link">
-                Already have an account? <a href="login.php">Login here</a>
+                Already have an account? <a href="log-in.php">Login here</a>
             </div>
         </form>
     </div>
 
-    <script>
-        const form = document.getElementById('registerForm');
-        const passwordInput = document.getElementById('password');
-        const passRequirements = document.getElementById('passwordRequirements');
-        const submitBtn = document.getElementById('submitBtn');
 
-        // Show password requirements on focus
-        passwordInput.addEventListener('focus', () => {
-            passRequirements.classList.add('show');
-        });
-
-        // Real-time password validation
-        passwordInput.addEventListener('input', function () {
-            const val = this.value;
-            const checks = {
-                reqLength: val.length >= 8,
-                reqUppercase: /[A-Z]/.test(val),
-                reqLowercase: /[a-z]/.test(val),
-                reqNumber: /[0-9]/.test(val)
-            };
-
-            for (const [id, passed] of Object.entries(checks)) {
-                const el = document.getElementById(id);
-                el.className = passed ? 'valid' : 'invalid';
-                el.innerHTML = (passed ? '✓ ' : '● ') + el.innerText.substring(2);
-            }
-        });
-
-        // Submit Simulation
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating...';
-
-            setTimeout(() => {
-                alert('Account Created Successfully!');
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<span>Create Account</span><i class="fas fa-paper-plane"></i>';
-            }, 2000);
-        });
-    </script>
 </body>
 
 </html>

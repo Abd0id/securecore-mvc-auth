@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate Dashboard - SecureCore</title>
+    <script src="script.js" defer></script>
+
     <style>
         * {
             margin: 0;
@@ -12,9 +15,17 @@
         }
 
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         body {
@@ -23,7 +34,7 @@
         }
 
         .navbar {
-            background: linear-gradient(-45deg, #667eea, #764ba2, #6b8cff, #5adf92ff);
+            background: linear-gradient(-45deg, #667eea, #764ba2, #6b8cff, #df5a5aff);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
             color: white;
@@ -84,7 +95,7 @@
         }
 
         .welcome-banner {
-            background: linear-gradient(-45deg, #66eac0ff, #764ba2, #6b8cff, #8a5adf);
+            background: linear-gradient(-45deg, #667eea, #764ba2, #6b8cff, #8a5adf);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
             color: white;
@@ -134,10 +145,25 @@
             margin-bottom: 15px;
         }
 
-        .card-icon.purple { background-color: #e8e4ff; color: #667eea; }
-        .card-icon.green { background-color: #d4f4dd; color: #27ae60; }
-        .card-icon.orange { background-color: #ffe8d4; color: #f39c12; }
-        .card-icon.blue { background-color: #d4e9ff; color: #3498db; }
+        .card-icon.purple {
+            background-color: #e8e4ff;
+            color: #667eea;
+        }
+
+        .card-icon.green {
+            background-color: #d4f4dd;
+            color: #27ae60;
+        }
+
+        .card-icon.orange {
+            background-color: #ffe8d4;
+            color: #f39c12;
+        }
+
+        .card-icon.blue {
+            background-color: #d4e9ff;
+            color: #3498db;
+        }
 
         .card h3 {
             font-size: 18px;
@@ -223,9 +249,20 @@
             font-weight: 600;
         }
 
-        .status-badge.pending { background-color: #fff3cd; color: #856404; }
-        .status-badge.accepted { background-color: #d4edda; color: #155724; }
-        .status-badge.rejected { background-color: #f8d7da; color: #721c24; }
+        .status-badge.pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .status-badge.accepted {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status-badge.rejected {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
 
         @media (max-width: 768px) {
             .navbar {
@@ -243,6 +280,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="navbar-brand">SecureCore</div>
@@ -363,16 +401,10 @@
                     </div>
                 </div>
             </div>
-            <p style="color: #666; font-size: 14px;">Complete your profile to increase your chances of getting hired.</p>
+            <p style="color: #666; font-size: 14px;">Complete your profile to increase your chances of getting hired.
+            </p>
         </div>
     </div>
-
-    <script>
-        function logout() {
-            if (confirm('Are you sure you want to logout?')) {
-                alert('Logout functionality will be connected to backend');
-            }
-        }
-    </script>
 </body>
+
 </html>

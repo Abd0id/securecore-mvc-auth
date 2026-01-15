@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>403 - Access Denied | SecureCore</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
 </head>
 
-<body>
+<body class="error-page">
 
     <!-- Floating warning background -->
     <div class="floating-icons" id="floatingIcons"></div>
@@ -28,7 +30,7 @@
         </div>
 
         <div class="button-group">
-            <a href="login.php" class="btn btn-primary">Go to Login</a>
+            <a href="log-in.php" class="btn btn-primary">Go to Login</a>
             <button onclick="goBack()" class="btn btn-secondary">Go Back</button>
         </div>
 
@@ -43,41 +45,6 @@
         </div>
     </div>
 
-    <script>
-        function goBack() {
-            if (window.history.length > 1) {
-                window.history.back();
-            } else {
-                window.location.href = 'login.html';
-            }
-        }
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const userRole = urlParams.get('role');
-        const requiredRole = urlParams.get('required');
-
-        if (userRole) {
-            document.getElementById('userRole').textContent = userRole.charAt(0).toUpperCase() + userRole.slice(1);
-        }
-
-        if (requiredRole) {
-            document.getElementById('requiredRole').textContent = requiredRole.charAt(0).toUpperCase() + requiredRole.slice(1);
-        }
-
-        // Generate floating warning icons
-        const container = document.getElementById("floatingIcons");
-
-        for (let i = 0; i < 20; i++) {
-            const icon = document.createElement("div");
-            icon.classList.add("icon");
-            icon.textContent = "⚠️";
-            icon.style.left = Math.random() * 100 + "%";
-            icon.style.fontSize = 20 + Math.random() * 40 + "px";
-            icon.style.animationDuration = 8 + Math.random() * 10 + "s";
-            icon.style.animationDelay = Math.random() * 5 + "s";
-            container.appendChild(icon);
-        }
-    </script>
 </body>
 
 </html>

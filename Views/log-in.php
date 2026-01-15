@@ -7,9 +7,11 @@
     <title>Login - SecureCore</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
 </head>
 
-<body>
+<body class="login-page">
     <ul class="circles">
         <li style="left: 25%; width: 80px; height: 80px; animation-delay: 0s;"></li>
         <li style="left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s;"></li>
@@ -62,56 +64,7 @@
         </form>
     </div>
 
-    <script>
-        // Existing logic
-        const form = document.getElementById('loginForm');
-        const emailInput = document.getElementById('email');
-        const passwordInput = document.getElementById('password');
-        const emailError = document.getElementById('emailError');
-        const passwordError = document.getElementById('passwordError');
-        const submitBtn = document.getElementById('submitBtn');
-        const alertBox = document.getElementById('alertBox');
 
-        function showAlert(message, type) {
-            alertBox.textContent = message;
-            alertBox.className = `alert alert-${type} show`;
-            setTimeout(() => alertBox.classList.remove('show'), 5000);
-        }
-
-        function validateEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        }
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            if (validateForm()) {
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
-
-                setTimeout(() => {
-                    showAlert('Success! Redirecting...', 'success');
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = '<span>Login</span><i class="fas fa-arrow-right"></i>';
-                }, 1500);
-            }
-        });
-
-        function validateForm() {
-            let isValid = true;
-            emailError.classList.remove('show');
-            passwordError.classList.remove('show');
-
-            if (!emailInput.value.trim() || !validateEmail(emailInput.value)) {
-                emailError.classList.add('show');
-                isValid = false;
-            }
-            if (!passwordInput.value.trim()) {
-                passwordError.classList.add('show');
-                isValid = false;
-            }
-            return isValid;
-        }
-    </script>
 </body>
 
 </html>
