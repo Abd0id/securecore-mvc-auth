@@ -99,21 +99,22 @@ Each role has:
 
 ```
 .
-├── app
-│   ├── Controllers
-│   ├── Core
-│   ├── Entities
-│   ├── Repositories
-│   ├── Services
-│   └── Views
-├── composer.json
-├── composer.phar
+
 ├── config
+├── Controllers
+├── Core
 ├── documents
+├── Models
+│   ├── Entities
+│   ├── Services
+│   └── Repositories
 ├── public
 │   └── index.php
-├── README.md
-└── src
+├── src
+├── Views
+├── composer.json
+├── composer.phar
+└── README.md
 
 ```
 
