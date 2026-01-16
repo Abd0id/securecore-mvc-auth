@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate Dashboard - SecureCore</title>
-    <script src="script.js" defer></script>
+    <script src="src/script.js" defer></script>
 
     <style>
         * {
@@ -108,7 +108,7 @@
             font-size: 28px;
             margin-bottom: 10px;
         }
-
+s
         .welcome-banner p {
             font-size: 16px;
             opacity: 0.9;
