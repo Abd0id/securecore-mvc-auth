@@ -1,3 +1,9 @@
+<?php
+require_once __DIR__ . '/../Controllers/AuthController.php';
+$form_errors = $_SESSION['form_errors'] ?? [];
+unset($_SESSION['form_errors']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +13,7 @@
     <title>Register - SecureCore</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="src/style.css">
-    <script src="src/script.js" defer></script>
+    <!-- <script src="src/script.js" defer></script> -->
 
 
 </head>
@@ -30,12 +36,12 @@
 
         <div id="alertBox" class="alert"></div>
 
-        <form id="registerForm" novalidate>
+        <form id="registerForm" method="POST" action="../Controllers/AuthController.php" novalidate>
             <div class="form-group">
-                <label for="fullName">Full Name</label>
+                <label for="name">Name</label>
                 <i class="fas fa-user input-icon"></i>
-                <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
-                <span class="error" id="fullNameError">Full name is required</span>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                <span class="error" id="nameError">Name is required</span>
             </div>
 
             <div class="form-group">
@@ -85,7 +91,7 @@
                         Policy</a></label>
             </div>
 
-            <button type="submit" class="btn" id="submitBtn">
+            <button type="submit" name="register" class="btn" id="submitBtn" value="register">
                 <span>Create Account</span>
                 <i class="fas fa-paper-plane"></i>
             </button>

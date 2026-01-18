@@ -1,3 +1,9 @@
+<?php
+require_once __DIR__ . '/../Controllers/AuthController.php';
+$form_errors = $_SESSION['form_errors'] ?? [];
+unset($_SESSION['form_errors']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +36,7 @@
 
         <div id="alertBox" class="alert"></div>
 
-        <form id="loginForm" novalidate>
+        <form id="loginForm" method="POST" action="../Controllers/AuthController.php" novalidate>
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <i class="fas fa-envelope input-icon"></i>
@@ -53,7 +59,7 @@
                 <a href="#" class="forgot-password">Forgot Password?</a>
             </div>
 
-            <button type="submit" class="btn" id="submitBtn">
+            <button type="submit" name="login" class="btn" id="submitBtn" value="login">
                 <span>Login</span>
                 <i class="fas fa-arrow-right"></i>
             </button>

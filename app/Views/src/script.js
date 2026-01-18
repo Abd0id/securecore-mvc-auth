@@ -186,7 +186,7 @@ if (document.body.classList.contains("register-page")) {
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating...';
 
     setTimeout(() => {
-      alert("Account Created Successfully!");
+      // alert("Account Created Successfully!");
       submitBtn.disabled = false;
       submitBtn.innerHTML =
         '<span>Create Account</span><i class="fas fa-paper-plane"></i>';
